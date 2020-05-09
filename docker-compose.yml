@@ -9,7 +9,7 @@ services:
       - --config.file=/etc/prometheus/prometheus.yml
     volumes:
       - ${PWD}/prometheus/config/prometheus.yml:/etc/prometheus/prometheus.yml:ro
-      - ${PWD}/prometheus/data:/promtheus
+      # - ${PWD}/prometheus/data:/prometheus
     depends_on:
       - cadvisor
       - node-exporter
