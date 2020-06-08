@@ -1,18 +1,5 @@
 version: '3.2'
 services:
-  prometheus:
-    image: prom/prometheus:latest
-    container_name: prometheus
-    ports:
-      - 9090:9090
-    command:
-      - --config.file=/etc/prometheus/prometheus.yml
-    volumes:
-      - ${PWD}/prometheus/config/prometheus.yml:/etc/prometheus/prometheus.yml:ro
-      - ${PWD}/prometheus/data:/promtheus
-    depends_on:
-      - cadvisor
-      - node-exporter
   node-exporter:
     image: prom/node-exporter:latest
     container_name: nodeexporter
@@ -40,10 +27,4 @@ services:
       - /var/run:/var/run:rw
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
-  grafana:
-    image: grafana/grafana
-    container_name: grafana
-    environment: 
-      - GF_SECURITY_ADMIN_PASSWORD=admin
-    ports: 
-      - 3000:3000
+
