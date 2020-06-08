@@ -35,7 +35,7 @@ scrape_configs:
     metrics_path: '/metrics'
     static_configs:
       - targets:
-        - cadvisor:8080 #['127.0.0.1:8080']
+        - 192.168.1.110:8080 #['127.0.0.1:8080']
   #- job_name: 'node'
   #  scrape_interval: 1s
     #metrics_path: '/metrics'
@@ -47,4 +47,4 @@ scrape_configs:
     #metrics_path: '/metrics'
     static_configs:
       - targets:
-        - node-exporter:9100 #['127.0.0.1:8080']
+        - 192.168.1.110:9100 #['127.0.0.1:8080']
