@@ -7,6 +7,8 @@ services:
       - 9090:9090
     command:
       - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - ${PWD}/prometheus/config/prometheus.yml:/etc/prometheus/prometheus.yml:ro
   
   grafana:
     image: grafana/grafana
@@ -14,4 +16,4 @@ services:
     environment: 
       - GF_SECURITY_ADMIN_PASSWORD=admin
     ports: 
-      - 3000:3000
+      - 3100:3000
