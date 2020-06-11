@@ -9,11 +9,3 @@ services:
       - --config.file=/etc/prometheus/prometheus.yml
     volumes:
       - ${PWD}/prometheus/config/prometheus.yml:/etc/prometheus/prometheus.yml:ro
-  
-  grafana:
-    image: grafana/grafana
-    container_name: grafana
-    environment: 
-      - GF_SECURITY_ADMIN_PASSWORD=admin
-    ports: 
-      - 3100:3000
